@@ -49,3 +49,21 @@ Object.defineProperties(person,{
 person.name = "akash";
 person.phone = 6789;
 console.log(person)
+console.log("internal properties operation checker")
+var person = {};
+Object.defineProperties(person,{
+   name:{
+    configurable:false,
+    value:"Jahid"
+   },
+   phone:{
+    writable:false,
+    value:2345
+   }
+})
+console.log("internal properties operation checker for one property")
+let descriptor = Object.getOwnPropertyDescriptor(person,"name")
+console.log(descriptor.configurable)
+console.log("internal properties operation checker for multiple property")
+let descriptor2 = Object.getOwnPropertyDescriptors(person)
+console.log(descriptor2)
