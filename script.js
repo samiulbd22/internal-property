@@ -34,3 +34,18 @@ Object.defineProperty(person,"year",{
 })
 person.year = 2024
 console.log(person)
+console.log("internal properties operation in multiple properties")
+var person = {};
+Object.defineProperties(person,{
+   name:{
+    configurable:false,
+    value:"Jahid"
+   },
+   phone:{
+    writable:false,
+    value:2345
+   }
+})
+person.name = "akash";
+person.phone = 6789;
+console.log(person)
